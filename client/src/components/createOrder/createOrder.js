@@ -15,15 +15,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Create() {
   const classes = useStyles();
-  const [student, setStudent] = useState({
-    regNo: "",
-    studentName: "",
-    grade: "",
-    section: "",
+  const [apparel, setApparel] = useState({
+    name: "",
+    appareltype: "",
+    size: "",
+    payment: "",
   });
 
-  const creatStudent = () => {
-    axios.post("http://localhost:5000/students", student).then(() => {
+  const createApparel = () => {
+    axios.post("http://localhost:5000/apparel", apparel).then(() => {
       window.location.reload(false);
     });
   };
@@ -35,39 +35,39 @@ export default function Create() {
           id="outlined-basic"
           label="Name"
           variant="outlined"
-          value={student.regNo}
+          value={apparel.name}
           onChange={(event) => {
-            setStudent({ ...student, regNo: event.target.value });
+            setApparel({ ...apparel, name: event.target.value });
           }}
         />
         <TextField
           id="outlined-basic"
           label="Apparel Type"
           variant="outlined"
-          value={student.studentName}
+          value={apparel.appareltype}
           onChange={(event) => {
-            setStudent({ ...student, studentName: event.target.value });
+            setApparel({ ...apparel, appareltype: event.target.value });
           }}
         />
         <TextField
           id="outlined-basic"
           label="Size"
           variant="outlined"
-          value={student.grade}
+          value={apparel.size}
           onChange={(event) => {
-            setStudent({ ...student, grade: event.target.value });
+            setApparel({ ...apparel, size: event.target.value });
           }}
         />
         <TextField
           id="outlined-basic"
           label="Payment Type"
           variant="outlined"
-          value={student.location}
+          value={apparel.payment}
           onChange={(event) => {
-            setStudent({ ...student, location: event.target.value });
+            setApparel({ ...apparel, payment: event.target.value });
           }}
         />
-        <Button variant="contained" color="primary" onClick={creatStudent}>
+        <Button variant="contained" color="primary" onClick={createApparel}>
           Enter Order
         </Button>
       </form>

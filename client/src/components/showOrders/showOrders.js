@@ -17,18 +17,18 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ShowStudent() {
+export default function ShowOrders() {
   const classes = useStyles();
-  const [studentsList, setStudentsList] = useState([]);
-  const deleteStudent = (id) => {
-    axios.delete(`http://localhost:5000/students/${id}`).then(() => {
+  const [apparelList, setApparelList] = useState([]);
+  const deleteApparel = (id) => {
+    axios.delete(`http://localhost:5000/apparel/${id}`).then(() => {
       window.location.reload(false);
     });
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/students").then((allStudents) => {
-      setStudentsList(allStudents.data);
+    axios.get("http://localhost:5000/apparel").then((allApparel) => {
+      setApparelList(allApparel.data);
     }, []);
   });
 
@@ -47,20 +47,20 @@ export default function ShowStudent() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {studentsList.map((student, key) => (
+            {apparelList.map((apparel, key) => (
               <TableRow key={key}>
                 <TableCell component="th" scope="row">
-                  {student.studentName}
+                  {apparel.name}
                 </TableCell>
-                <TableCell align="right">{student.regNo}</TableCell>
-                <TableCell align="right">{student.grade}</TableCell>
-                <TableCell align="right">{student.location}</TableCell>
+                <TableCell align="right">{apparel.appareltype}</TableCell>
+                <TableCell align="right">{apparel.size}</TableCell>
+                <TableCell align="right">{apparel.payment}</TableCell>
                 <TableCell align="right">
                   <IconButton
                     aria-label="delete"
                     className={classes.margin}
                     onClick={() => {
-                      deleteStudent(student._id);
+                      deleteApparel(apparel._id);
                     }}
                   >
                     <DeleteIcon />
