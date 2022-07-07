@@ -1,4 +1,5 @@
 import "../adminPage/adminPage.css";
+import "../../App.css";
 
 import "../createOrder/createOrderForm.css";
 import useStyles from "../../styles.js";
@@ -9,7 +10,7 @@ import Create from "../createOrder/createOrderForm";
 function Admin() {
   const classes = useStyles();
   return (
-    <div className="adminPage">
+    <div className="adminPage App">
       <Container maxWidth="lg">
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className="heading" variant="h2" align="center">
