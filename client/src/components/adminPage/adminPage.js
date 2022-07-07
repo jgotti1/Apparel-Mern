@@ -1,4 +1,5 @@
-import "../../App.css";
+import "../adminPage/adminPage.css";
+
 import "../createOrder/createOrderForm.css";
 import useStyles from "../../styles.js";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
@@ -8,7 +9,7 @@ import Create from "../createOrder/createOrderForm";
 function Admin() {
   const classes = useStyles();
   return (
-    <div className="App">
+    <div className="adminPage">
       <Container maxWidth="lg">
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className="heading" variant="h2" align="center">
