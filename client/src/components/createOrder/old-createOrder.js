@@ -30,6 +30,7 @@ export default function Create() {
   return (
     <>
       <h2>Create Order</h2>
+
       <form className={classes.root} noValidate autoComplete="off">
         <TextField
           id="outlined-basic"
@@ -67,6 +68,7 @@ export default function Create() {
             setApparel({ ...apparel, payment: event.target.value });
           }}
         />
+
         <Button variant="contained" color="primary" onClick={createApparel}>
           Enter Order
         </Button>

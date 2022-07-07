@@ -1,8 +1,9 @@
 import "../../App.css";
+import "../createOrder/createOrderForm.css";
 import useStyles from "../../styles.js";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 import Orders from "../showOrders/showOrders";
-import Create from "../createOrder/createOrder";
+import Create from "../createOrder/createOrderForm";
 
 function Admin() {
   const classes = useStyles();
@@ -16,14 +17,14 @@ function Admin() {
         </AppBar>
         <Grow in>
           <Container>
-            <Grid container justify="space-between" alignItems="stretch">
+            <Grid container justifyContent="space-between" alignItems="stretch">
               <Grid item xs={12} sm={7}>
-                <AppBar className={classes.appbar} position="static" color="inherit">
+                <AppBar className="create-div" position="static" color="inherit">
                   <Orders />
                 </AppBar>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <AppBar className={classes.appbar} position="static" color="inherit">
+                <AppBar className="create-div" position="static" color="inherit">
                   <Create />
                 </AppBar>
               </Grid>

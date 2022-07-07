@@ -63,7 +63,7 @@ export default function ShowOrders() {
                       deleteApparel(apparel._id);
                     }}
                   >
-                    <DeleteIcon />
+                    <DeleteIcon color="Primary" />
                   </IconButton>
                 </TableCell>
               </TableRow>
