@@ -1,13 +1,22 @@
 .grid_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
-  margin-top: 7rem;
+  justify-items: center;
+  margin-top: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  gap: 20px;
+  row-gap: 20px;
 }
 .card_media {
   margin-top: 10px;
+}
+img {
+  border: 2px solid black;
+  margin: 10px;
+  width: 324px;
+  height: 204px;
+}
+.header_top {
+  margin-top: 90px;
 }
